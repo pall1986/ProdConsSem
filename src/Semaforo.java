@@ -1,7 +1,7 @@
 public class Semaforo {
 private int stato; // 0 =rosso
 public Semaforo(int v) {
-    stato=v;
+    this.stato=v;
 
 }
 private int getStatus() {
@@ -12,8 +12,6 @@ synchronized public void P(){
         try {
             wait(); // il thread si sospende
         } catch (InterruptedException e) {
-            
-            
         }
     }
     stato--;//pone il semaforo a rosso
