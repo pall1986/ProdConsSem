@@ -5,7 +5,7 @@ public Semaforo(int v) {
 
 }
 private int getStatus() {
-    return stato;
+    return this.stato;
 }
 synchronized public void P(){
     while(getStatus()==0){ //semaforo rosso
@@ -14,10 +14,10 @@ synchronized public void P(){
         } catch (InterruptedException e) {
         }
     }
-    stato--;//pone il semaforo a rosso
+    this.stato--;//pone il semaforo a rosso
 }
 synchronized public void V(){
-    stato++; //pone il semaforo a verde
+    this.stato++; //pone il semaforo a verde
     notify(); //risveglia un thread sospeso
 }
 }
